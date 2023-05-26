@@ -1,0 +1,17 @@
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+
+\newcommand{\questionaireTitle}{}
+\newcommand{\headerQuestionairePart}{}
+
+\newcommand{\setTitle}[1]{\renewcommand{\questionaireTitle}{#1}}
+\newcommand{\setPart}[1]{\renewcommand{\headerQuestionairePart}{#1}}
+
+\fancyhead[L]{{\textsc{\questionaireTitle}} \\ \texttt{\headerQuestionairePart}}
+\fancyhead[R]{\begin{minipage}{.5cm}
+		\questionText{ID}
+	\end{minipage} \begin{minipage}{3.5cm}
+		\sfbox{3.5cm}{7.5mm}
+\end{minipage}}
+
+\fancyfoot[C]{}

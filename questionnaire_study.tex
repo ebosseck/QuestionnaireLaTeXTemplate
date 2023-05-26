@@ -1,0 +1,73 @@
+\documentclass[12pt,pdftex,a4paper]{scrartcl}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[hyphens]{url}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[pdftex]{graphicx}
+\usepackage{amsfonts}
+\usepackage{listings}
+\usepackage[table]{xcolor}
+\usepackage{tcolorbox}
+\usepackage{calc}
+
+
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+
+\usepackage{hyperref}
+\usepackage{colortbl}
+\usepackage{multirow}
+\usepackage{multicol}
+
+\usepackage{array}
+\usepackage{longtable}
+
+%\input{res/definitions_interactive.tex}
+\input{res/definitions.tex}
+\input{forms/header.tex}
+
+\usepackage{draftwatermark}
+\SetWatermarkColor{gray!15}
+\SetWatermarkScale{2.5}
+
+\begin{document}
+	\rowcolors{1}{}{gray!25}
+	\setTitle{Your Study Title Here}
+	
+	\SetWatermarkText{\textbf{DEMOGRAPHICS}}
+	\setPart{Demographics \& Experience}
+	
+	\begin{Form}
+		\section*{Demographics}
+		\input{forms/demographics.tex}
+		\section*{Prior Experience}
+		\input{forms/prior_xp.tex}
+	\end{Form}
+	
+	
+	\newpage
+	\SetWatermarkText{\textbf{YOUR WATERMARK}}
+	\renewcommand{\headerQuestionairePart}{Questionaire's Subtitle}
+	\begin{Form}
+		\section*{Usability}
+		\input{forms/system_usability_scale.tex}
+	\end{Form}
+	
+	\newpage
+	\SetWatermarkText{\textbf{YOUR WATERMARK 2}}
+	\renewcommand{\headerQuestionairePart}{Questionaire's Subtitle (Part 2)}
+	\begin{Form}
+		\section*{Usability}
+		\input{forms/system_usability_scale.tex}
+	\end{Form}
+
+	\newpage
+	\SetWatermarkText{\textbf{YOUR WATERMARK 3}}
+	\renewcommand{\headerQuestionairePart}{Questionaire's Subtitle, the final one}
+	\begin{Form}
+		\section*{Usability}
+		\input{forms/system_usability_scale.tex}
+	\end{Form}
+	
+\end{document}

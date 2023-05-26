@@ -1,0 +1,40 @@
+
+\newcommand{\questionText}[1]{\textbf{#1}}
+
+\newcommand{\sfbox}[2]{\TextField[width=#1, height=#2, bordercolor=0.9 0.9 0.9, color=0 0 0]{}}
+\newcommand{\sfboxML}[2]{\TextField[width=#1, height=#2, multiline=true, bordercolor=0.9 0.9 0.9, color=0 0 0]{}}
+
+\newcommand{\freetextQuestion}[2]{\questionText{#1} \newline \sfboxML{\textwidth}{#2}}
+\newcommand{\freetextQuestionSingle}[1]{\questionText{#1} \newline \sfbox{\textwidth}{7.5mm}}
+\newcommand{\freetextQuestionInLine}[2]{
+\begin{minipage}{\textwidth-#2}
+\questionText{#1}
+\end{minipage} \begin{minipage}{#2}
+\sfbox{\textwidth}{7.5mm}
+\end{minipage}}
+
+%\newlength{\checkQuestionLength}
+%\makeatletter
+%\setlength{\checkQuestionLength}{0.5\textwidth}
+%\makeatother
+
+\newcommand{\checkmarkAutoName}{
+\ifdef{\thecheckmarkCounter}{}{
+\newcounter{checkmarkCounter}
+\setcounter{checkmarkCounter}{0}
+}
+\stepcounter{checkmarkCounter}
+}
+
+\newcommand{\checkfieldIntern}{\centering$\bigcirc$}
+\newcommand{\checkfield}{\checkmarkAutoName\CheckBox[name={check\thecheckmarkCounter}]{\ignorespaces}\hspace*{-5mm}\checkfieldIntern}
+
+\newcommand{\radiobutton}{\checkmarkAutoName\CheckBox[name={check\thecheckmarkCounter}]{\ignorespaces}\hspace*{-5mm}\checkfieldIntern}
+
+\newcommand{\agreeQuestion}[1]{\questionText{#1} & \tiny Strongly agree & \checkfield & \checkfield & \checkfield & \checkfield & \checkfield & \tiny Strongly disagree \\} 
+\newenvironment{agreeQuestions}{\begin{longtable}{m{\textwidth-7.5cm} >{\centering\arraybackslash}m{1cm} | >{\centering\arraybackslash}m{.5cm} >{\centering\arraybackslash}m{.5cm} >{\centering\arraybackslash}m{.5cm} >{\centering\arraybackslash}m{.5cm} >{\centering\arraybackslash}m{.5cm} | >{\centering\arraybackslash}m{1cm}}} {\end{longtable}}
+
+\newcommand{\checkboxQuestion}[1]{\item[] \checkfield \  #1}
+\newenvironment{checkboxQuestions}[1]{\questionText{#1} \newline \begin{itemize}}{\end{itemize}}
+\newenvironment{checkboxQuestionsCompact}[3]{\begin{minipage}{\textwidth-#2}\questionText{#1}\end{minipage} \begin{minipage}{#2} \begin{multicols}{#3} \begin{itemize}}{\end{itemize}\end{multicols}\end{minipage}}
+
