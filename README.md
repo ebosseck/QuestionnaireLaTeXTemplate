@@ -91,8 +91,13 @@ Agreement questions are questions asking if the participant agrees with a statem
 ```
 \begin{agreeQuestions}
 	\agreeQuestion{Your first question here}
-  ...
-  \agreeQuestion{Your last question here}
+	...
+	\agreeQuestion{Your last question here}
 \end{agreeQuestions}
 
 ```
+
+## Contributing
+
+If you have interesting sets of questions, that could be of use in general (for example standardized question blocks such as the System Usability Scale), feel free to open a pull request.
+Likewise, if you spot any errors, feel free to open an Issue or even better a pull request fixing the issue.
