@@ -84,9 +84,9 @@ The Question is in the first line, with a multi-line response field starting in 
 Where the first parameter is your question, and the second parameter is the height of your input field
 
 
-### Agreement Questions
+### Likert Scale Questions
 
-Agreement questions are questions asking if the participant agrees with a statement. Options range from strongly agree to strongly disagree in five steps.
+Likert-Scale questions are questions asking if the participant agrees with a statement. Options range from strongly agree to strongly disagree in five steps.
 
 ```
 \begin{agreeQuestions}
